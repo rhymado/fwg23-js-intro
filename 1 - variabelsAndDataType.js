@@ -76,7 +76,8 @@ fruit = "Melon";
 // Function
 // berisikan sekumpulan perintah, bisa menerima input, bisa memberikan output
 // input bisa berapapun, dimasukkan berdasarkan posisinya, didalam fungsi mendapatkan alias baru
-// return => memberikan keluaran
+// output harus 1
+// return => memberikan keluaran, memberhentikan fungsi
 // 1. deklarasi
 // function namaFungsi(input){kumpulan perintah}
 function greet() {
@@ -89,12 +90,16 @@ const greetEx = function (firstName, lastName) {
   // jika ada input di fungsi, lengkapi dengan validasi
   // pengecekan tipedata primitif, menggunakan typeof
   // typeof namaVariabel
-  if (typeof firstName === "string" && typeof lastName === "string") {
-    console.log("Hello World, " + firstName + " " + lastName);
-  }
+  // if (typeof firstName === "string" && typeof lastName === "string") {
+  //   console.log("Hello World, " + firstName + " " + lastName);
+  // }
+  if (typeof firstName !== "string") return console.log("Tipe Data Input Harus Berupa String");
+  if (typeof lastName !== "string") return console.log("Tipe Data Input Harus Berupa String");
+  console.log("Hello World, " + firstName + " " + lastName);
 };
 
-// greetEx(namaBelakang, namaDepan);
+greetEx(namaDepan, namaBelakang);
+greetEx(true, namaDepan);
 
 // 3. anak panah
 // tipeVariabel namaVariabel = (input) => {kumpulan perintah}
@@ -129,24 +134,24 @@ const person = {
   hobbies: hobbies,
 };
 person.age = 30;
-console.log(person.firstName);
-console.log(person["firstName"]);
+// console.log(person.firstName);
+// console.log(person["firstName"]);
 const prop = "firstName";
-console.log(person[prop]);
+// console.log(person[prop]);
 
 // instanceOf
 // namaVariabel instaceOf tipeData/customType
-console.log(hobbies instanceof Object);
-console.log(hobbies instanceof Array);
-console.log(person instanceof Object);
-console.log(person instanceof Array);
+// console.log(hobbies instanceof Object);
+// console.log(hobbies instanceof Array);
+// console.log(person instanceof Object);
+// console.log(person instanceof Array);
 
 const tgl = new Date();
 const mbl = new Car();
-console.log(tgl instanceof Date);
-console.log(tgl instanceof Car);
-console.log(mbl instanceof Date);
-console.log(mbl instanceof Car);
+// console.log(tgl instanceof Date);
+// console.log(tgl instanceof Car);
+// console.log(mbl instanceof Date);
+// console.log(mbl instanceof Car);
 
 const persons = [
   {
