@@ -48,6 +48,26 @@ const result = arr.sort((a, b) => {
 // console.log(arr);
 // console.log(result);
 
+const hobbies = ["Reading", "Hiking", "Gaming", "Swimming", "Gardening"];
+const nums = [2, 4, 6, 1, 3, 5];
+// R H Gm S Gr
+// R H Gm S Gr
+// R H Gm S Gr
+// R H S Gm Gr
+// R S H Gm Gr
+// S R H Gm Gr
+// S R H Gr Gm
+nums.sort((right, left) => {
+  // console.log(a, b);
+  if (right > left) return 1;
+  // jika return negative, maka posisi ditukar
+  if (right < left) return -1;
+  // jia return positive, maka posisi tetap
+  return 0;
+  // jika return nol, memiliki nilai yg sama
+});
+console.log(nums);
+
 // Method Reverse
 // Digunakan untuk memutarbalikkan urutan array
 // Array.reverse
@@ -97,10 +117,10 @@ const arrStr1 = str.split();
 const arrStr2 = str.split("");
 const arrStr3 = str.split(" ");
 const arrStr4 = str.split("a", 2);
-console.log(arrStr1);
-console.log(arrStr2);
-console.log(arrStr3);
-console.log(arrStr4);
+// console.log(arrStr1);
+// console.log(arrStr2);
+// console.log(arrStr3);
+// console.log(arrStr4);
 
 // Method Join
 // Digunakan untuk menggabungkan elemen2 di dalam array sesuai dengan pemisahnya
@@ -108,6 +128,6 @@ console.log(arrStr4);
 const strArr2 = arrStr2.join();
 const strArr3 = arrStr3.join(" ");
 const strArr4 = arrStr4.join("");
-console.log(strArr2);
-console.log(strArr3);
-console.log(strArr4);
+// console.log(strArr2);
+// console.log(strArr3);
+// console.log(strArr4);
