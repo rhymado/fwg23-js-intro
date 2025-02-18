@@ -90,7 +90,7 @@ const newLength = arr.push(60, 70, 100);
 
 const scores = [40, 65, 79, 88, 45, 70];
 
-const grades = scores.map((el) => {
+const grades = scores.map(function (el) {
   switch (true) {
     case el >= 80 && el <= 100:
       return "A";
