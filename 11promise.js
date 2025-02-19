@@ -5,7 +5,7 @@
 
 const janjian = new Promise((resolve, reject) => {
   setTimeout(() => {
-    const success = true;
+    const success = false;
     if (success) {
       resolve("berhasil");
       return;
@@ -14,13 +14,13 @@ const janjian = new Promise((resolve, reject) => {
   }, 1);
 });
 
-// janjian
-//   .then((successMsg) => {
-//     console.log(`Janjian dipenuhi, ${successMsg}`);
-//   })
-//   .catch((errorMsg) => {
-//     console.log(`Janjian gagal, karena ${errorMsg.message}`);
-//   });
+janjian
+  .then((successMsg) => {
+    console.log(`Janjian dipenuhi, ${successMsg}`);
+  })
+  .catch((errorMsg) => {
+    console.log(`Janjian gagal, karena ${errorMsg.message}`);
+  });
 
 const getUser = new Promise((resolve, reject) => {
   const success = true;
@@ -60,22 +60,22 @@ const getPostsFromUser = (userId) => {
   });
 };
 
-getUser
-  .then((user) => {
-    const { id } = user;
-    if (typeof id === "string") throw new Error("id has wrong type");
-    return getPostsFromUser(id);
-  })
-  .then((posts) => {
-    posts.forEach((el) => {
-      const { title, content } = el;
-      console.log(`${title}
-${content}`);
-    });
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
+// getUser
+//   .then((user) => {
+//     const { id } = user;
+//     if (typeof id === "string") throw new Error("id has wrong type");
+//     return getPostsFromUser(id);
+//   })
+//   .then((posts) => {
+//     posts.forEach((el) => {
+//       const { title, content } = el;
+//       console.log(`${title}
+// ${content}`);
+//     });
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//   });
 
 const getPostsFromUsersAsync = async function () {
   try {
@@ -94,4 +94,4 @@ ${content}`);
     console.log("get user selesai");
   }
 };
-getPostsFromUsersAsync();
+// getPostsFromUsersAsync();
